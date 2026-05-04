@@ -1,4 +1,4 @@
-using System.Numerics;
+/*using System.Numerics;
 using Content.Goobstation.Shared.Polls;
 using Content.Shared.Interaction;
 using Robust.Client.GameObjects;
@@ -109,3 +109,4 @@ public enum PollBoothLayer : byte
 {
     Alert,
 }
+*/

@@ -30,8 +30,8 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
         if (args.Emote.TargetEvents is not null) // CorvaxGoob-PrototypedAnimations : Raise to play client prototyped animation if it's exist
             foreach (var targetEvent in args.Emote.TargetEvents)
             {
-                targetEvent.Target = uid;
-                RaiseLocalEvent(uid, (object) targetEvent, true);
+                targetEvent.Target = ent;
+                RaiseLocalEvent(ent, (object) targetEvent, true);
             }
     }
 
@@ -40,7 +40,7 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
         ent.Comp.Emote = prot;
         Dirty(ent);
 
-        if (prot == "Flip")
-            ApplyFlipEffects(ent);
+        // if (prot == "Flip") // CorvaxGoob : щиткод кринж
+            //ApplyFlipEffects(ent);
     }
 }

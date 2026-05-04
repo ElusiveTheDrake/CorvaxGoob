@@ -1,4 +1,4 @@
-using Content.Client.Gameplay;
+/*using Content.Client.Gameplay;
 using Content.Client.Lobby;
 using Content.Goobstation.Client.Polls.UI;
 using Robust.Client.UserInterface.Controllers;
@@ -50,3 +50,4 @@ public sealed class PollUIController : UIController, IOnStateExited<GameplayStat
         _window = null;
     }
 }
+*/
