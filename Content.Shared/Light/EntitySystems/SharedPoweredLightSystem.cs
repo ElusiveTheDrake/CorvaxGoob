@@ -386,9 +386,9 @@ public abstract class SharedPoweredLightSystem : EntitySystem
 
             if (color != null)
                 _pointLight.SetColor(uid, color.Value, pointLight);
-            if (radius != null)
+            if (light.ChangeLightRadius && radius != null) // CorvaxGoob-FloorTileLight : added check
                 _pointLight.SetRadius(uid, (float)radius, pointLight);
-            if (energy != null)
+            if (light.ChangeLightEnergy && energy != null) // CorvaxGoob-FloorTileLight : added check
                 _pointLight.SetEnergy(uid, (float)energy, pointLight);
             if (softness != null)
                 _pointLight.SetSoftness(uid, (float)softness, pointLight);

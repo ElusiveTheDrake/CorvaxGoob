@@ -297,6 +297,8 @@ namespace Content.Server.Database
 
             ModelBan.OnModelCreating(modelBuilder);
 
+            // Corvax-Goob нам такое не надо
+            /*
             // RMC14
             modelBuilder.Entity<RMCLinkedAccount>()
                 .HasOne(l => l.Player)
@@ -404,6 +406,7 @@ namespace Content.Server.Database
             modelBuilder.Entity<PollSeen>()
                 .HasIndex(s => new { s.PollId, s.PlayerUserId })
                 .IsUnique();
+                */
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)

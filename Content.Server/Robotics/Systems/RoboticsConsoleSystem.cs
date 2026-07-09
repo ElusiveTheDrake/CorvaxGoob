@@ -207,8 +207,9 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
     private void UpdateUserInterface(Entity<RoboticsConsoleComponent> ent)
     {
-        var state = new RoboticsConsoleState(ent.Comp.Cyborgs, ent.Comp.AllowBorgControl);
-        var state = new RoboticsConsoleState(ent.Comp.Cyborgs, _slots.TryGetSlot(ent, ent.Comp.CircuitBoardItemSlot, out var slot) && slot.HasItem); // Corvax-Goob-MutableLaws
+        var state = new RoboticsConsoleState(ent.Comp.Cyborgs, ent.Comp.AllowBorgControl,
+        _slots.TryGetSlot(ent, ent.Comp.CircuitBoardItemSlot, out var slot) && slot.HasItem);// Corvax-Goob-MutableLaws
+
         _ui.SetUiState(ent.Owner, RoboticsConsoleUiKey.Key, state);
     }
 }

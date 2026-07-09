@@ -529,9 +529,9 @@ public sealed partial class ChatSystem : SharedChatSystem
             var sound = announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound);
             sound.Params = sound.Params.WithVolume(-2);
             SendGlobalSound(sound, Filter.Broadcast());
-            // CorvaxGoob-Announcements-Volume-End
 
-            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            //_audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            // CorvaxGoob-Announcements-Volume-End
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }
@@ -556,8 +556,9 @@ public sealed partial class ChatSystem : SharedChatSystem
             var sound = announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound);
             sound.Params = sound.Params.WithVolume(-2);
             SendGlobalSound(sound, Filter.Broadcast());
+
+            //_audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
             // CorvaxGoob-Announcements-Volume-End
-            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement from {sender}: {message}");
     }
@@ -594,8 +595,9 @@ public sealed partial class ChatSystem : SharedChatSystem
             var sound = announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound);
             sound.Params = sound.Params.WithVolume(-2);
             SendGlobalSound(sound, filter);
+
+            //_audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
             // CorvaxGoob-Announcements-Volume-End
-            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
         }
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");

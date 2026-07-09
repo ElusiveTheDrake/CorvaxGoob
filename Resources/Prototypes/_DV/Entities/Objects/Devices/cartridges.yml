@@ -9,7 +9,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-      sprite: _CorvaxGoob/Interface/Misc/program_icons.rsi # Corvax-Goob-RespriteProgramsIcons
 # Upstreamrr todo <mailfix>
 
 #- type: entity
@@ -30,7 +29,7 @@
 #  - type: Cartridge
 #    programName: mail-metrics-program-name
 #    icon:
-#      sprite: Nyanotrasen/Objects/Specific/Mail/mail.rsi
+#      sprite: _CorvaxGoob/Interface/Misc/program_icons.rsi # Corvax-Goob-RespriteProgramsIcons
 #      state: icon
 
 - type: entity

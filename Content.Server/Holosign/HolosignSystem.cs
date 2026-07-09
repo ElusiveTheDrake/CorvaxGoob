@@ -104,7 +104,7 @@ public sealed class HolosignSystem : EntitySystem
         // Goob edit end
         var xform = Transform(holoUid);
         // TODO: Just make the prototype anchored
-        if (!xform.Anchored)
+        if (!xform.Anchored && component.AnchorOnSpawn) //CorvaxGoob добавил component.AnchorOnSpawn
             _transform.AnchorEntity(holoUid, xform); // anchor to prevent any tempering with (don't know what could even interact with it)
 
         args.Handled = true;

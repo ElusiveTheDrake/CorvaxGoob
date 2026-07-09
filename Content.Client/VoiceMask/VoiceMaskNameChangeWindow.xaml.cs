@@ -124,8 +124,7 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
             SpeechVerbSelector.SelectId(id);
     }
 
-    public void UpdateState(string name, string voice, string? verb) // CorvaxGoob-TTS
-    public void UpdateState(string name, string? verb, bool active, bool accentHide)
+    public void UpdateState(string name, string? verb, bool active, bool accentHide, string voice)// CorvaxGoob-TTS
     {
         NameSelector.Text = name;
         _verb = verb;

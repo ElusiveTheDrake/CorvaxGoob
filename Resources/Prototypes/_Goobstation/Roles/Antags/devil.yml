@@ -19,7 +19,7 @@
     time: 5h # 5 hours
   - !type:RoleTimeRequirement
     role: JobLibrarian # CorvaxGoob; :S_trollface:
-    time: 36000 # 10 Hour CorvaxGoob: from 1 hour to 10
+    time: 5h # CorvaxGoob
   - !type:SpeciesRequirement
     inverted: true
     species:

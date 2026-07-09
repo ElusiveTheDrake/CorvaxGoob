@@ -219,7 +219,7 @@ public sealed partial class VoiceMaskSystem : EntitySystem
     {
         if (_uiSystem.HasUi(entity, VoiceMaskUIKey.Key))
             _uiSystem.SetUiState(entity.Owner, VoiceMaskUIKey.Key, new VoiceMaskBuiState(GetCurrentVoiceName(entity), entity.Comp.VoiceMaskSpeechVerb, entity.Comp.Active, entity.Comp.AccentHide,
-                entity.Comp.JobIconProtoId)); // GabyStation -> Radio icons
+                entity.Comp.JobIconProtoId, entity.Comp.VoiceId)); // GabyStation -> Radio icons // CorvaxGoob-TTS
     }
     #endregion
 

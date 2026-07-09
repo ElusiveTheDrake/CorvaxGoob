@@ -134,7 +134,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: CrowbarYellow
+        #- id: CrowbarYellow #CorvaxGoob
         - id: Wrench
         - id: Screwdriver
         - id: Wirecutter
@@ -143,7 +143,7 @@
         #Goob-Station - changes made by Jellygato 7/13/24
         - id: trayScanner
         - id: GasAnalyzer
-      - id: Crowbar #CorvaxGoob: CrowbarYellow --> Crowbar
+        - id: Crowbar #CorvaxGoob: CrowbarYellow --> Crowbar
 
 - type: entity
   id: ClothingBeltChiefEngineerFilled

@@ -241,7 +241,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobDetective
-      time: 3600 # 1 hours
+      time: 1h
 # CorvaxGoob-loadouts-end.
 
 # Pins

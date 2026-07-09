@@ -253,8 +253,8 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-      - id: BoxPlaysetEvacPod # Corvax-Goob-EvacPod
-      - id: CarcBoxClassic # CorvaxGoob Spacessonne
+        - id: BoxPlaysetEvacPod # Corvax-Goob-EvacPod
+        - id: CarcBoxClassic # CorvaxGoob Spacessonne
         - id: ChessBoard
         - id: BackgammonBoard
         - id: ParchisBoard
@@ -421,7 +421,7 @@
         - id: ClothingHeadHatMagician
         - id: BeachBall
         - id: TennisBall
-      - id: CardBoxKotahi # CorvaxGoob-kotahi
+        - id: CardBoxKotahi # CorvaxGoob-kotahi
           amount: 2
         - id: ClothingShoesSkates
         - id: RubberChicken

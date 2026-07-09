@@ -272,7 +272,7 @@ namespace Content.Server.Entry
             _job.Initialize();
             _rateLimit.Initialize();
             _lastAntagManager.Initialize(); // Goobstation
-                IoCManager.Resolve<TTSManager>().Initialize(); // CorvaxGoob-TTS
+            IoCManager.Resolve<TTSManager>().Initialize(); // CorvaxGoob-TTS
         }
 
         public override void PostInit()

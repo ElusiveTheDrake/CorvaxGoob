@@ -73,8 +73,7 @@ public sealed partial class GunSystem
             if (ent.Comp.ZeroNoAmmo && step == 0 && (int) current > 0) // Goobstation
                 step = Math.Min(1, ent.Comp.MagSteps - 1);
 
-            if (isEmpty || step == 0 && !component.ZeroVisible) // CorvaxGoob : добавлена проверка и реализация переменной отвечающей за отсутствие магазина
-            if (step == 0 && !ent.Comp.ZeroVisible)
+            if (isEmpty || step == 0 && !ent.Comp.ZeroVisible) // CorvaxGoob : добавлена проверка и реализация переменной отвечающей за отсутствие магазина
             {
                 if (_sprite.LayerMapTryGet((ent, sprite), GunVisualLayers.Mag, out _, false))
                 {

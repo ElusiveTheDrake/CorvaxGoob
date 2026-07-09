@@ -39,8 +39,7 @@ public sealed class RoboticsConsoleState : BoundUserInterfaceState
 
     public bool HasCircuitBoard; // Corvax-Goob-MutableLaws
 
-    public RoboticsConsoleState(Dictionary<string, CyborgControlData> cyborgs, bool hasCircuitBoard) // Corvax-Goob-MutableLaws
-    public RoboticsConsoleState(Dictionary<string, CyborgControlData> cyborgs, bool allowBorgControl)
+    public RoboticsConsoleState(Dictionary<string, CyborgControlData> cyborgs, bool allowBorgControl, bool hasCircuitBoard)// Corvax-Goob-MutableLaws
     {
         HasCircuitBoard = hasCircuitBoard; // Corvax-Goob-MutableLaws
         Cyborgs = cyborgs;

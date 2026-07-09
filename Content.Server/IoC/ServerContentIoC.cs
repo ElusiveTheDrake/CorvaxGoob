@@ -248,9 +248,7 @@ internal static class ServerContentIoC
         deps.Register<DiscordLink>();
         deps.Register<DiscordChatLink>();
         deps.Register<LastRolledAntagManager>(); // Goobstation - antag pity
-        deps.Register<LinkAccountManager>(); // RMC - Patreon
-            // IoCManager.Register<ServerCurrencyManager>(); // Goobstation - Server Currency; Deleted by CorvaxGoob
-            // IoCManager.Register<LinkAccountManager>(); // RMC - Patreon; Deleted by CorvaxGoob
-            IoCManager.Register<TTSManager>(); // CorvaxGoob-TTS
+        //deps.Register<LinkAccountManager>(); // RMC - Patreon; Deleted by CorvaxGoob
+        IoCManager.Register<TTSManager>(); // CorvaxGoob-TTS
     }
 }
