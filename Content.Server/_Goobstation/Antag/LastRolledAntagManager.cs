@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-
+/*                                                      //CorvaxGoob-Deleted
 using Content.Server.Database;
 using Robust.Server.Player;
 using Robust.Shared.Asynchronous;
@@ -101,3 +101,4 @@ namespace Content.Server._Goobstation.Antag
         #endregion
     }
 }
+*/

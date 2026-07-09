@@ -37,7 +37,6 @@ using Robust.Shared.Utility;
 using Content.Server._CorvaxGoob.TTS;
 using Content.Server.Corvax.GuideGenerator;
 using System.IO;
-using Content.Server._Goobstation.Antag;
 
 namespace Content.Server.Entry
 {
@@ -83,7 +82,7 @@ namespace Content.Server.Entry
         [Dependency] private readonly ServerInfoManager _serverInfo = default!;
         [Dependency] private readonly ServerUpdateManager _updateManager = default!;
 
-        [Dependency] private readonly LastRolledAntagManager _lastAntagManager = default!; // Goobstation
+        //[Dependency] private readonly LastRolledAntagManager _lastAntagManager = default!; // Goobstation CorvaxGoob-Deleted
 
         public override void PreInit()
         {
@@ -138,7 +137,7 @@ namespace Content.Server.Entry
             _watchlistWebhookManager.Initialize();
             _job.Initialize();
             _rateLimit.Initialize();
-            _lastAntagManager.Initialize(); // Goobstation
+            //_lastAntagManager.Initialize(); // Goobstation CorvaxGoob-Deleted
             IoCManager.Resolve<TTSManager>().Initialize(); // CorvaxGoob-TTS
         }
 

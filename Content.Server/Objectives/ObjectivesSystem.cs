@@ -25,7 +25,8 @@ using Content.Shared.Administration.Logs;
 using Robust.Shared.Network;
 using Content.Shared.Roles;
 using Content.Server.Roles;
-using Content.Shared.Roles.Components; //Goobstation
+using Content.Shared.Roles.Components;
+using Content.Goobstation.Shared.ManifestListings; //Goobstation
 
 namespace Content.Server.Objectives;
 

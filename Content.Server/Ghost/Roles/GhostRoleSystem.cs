@@ -43,6 +43,7 @@ using Robust.Shared.Collections;
 using Content.Shared.Ghost.Roles.Components;
 using Content.Shared.Roles.Components;
 using Content.Server.GameTicking;
+using System.Linq;
 
 namespace Content.Server.Ghost.Roles;
 

@@ -84,7 +84,7 @@ internal static class ServerContentIoC
         deps.Register<CVarControlManager>();
         deps.Register<DiscordLink>();
         deps.Register<DiscordChatLink>();
-        deps.Register<LastRolledAntagManager>(); // Goobstation - antag pity
+        //deps.Register<LastRolledAntagManager>(); // Goobstation - antag pity CorvaxGoob-Deleted
         //deps.Register<LinkAccountManager>(); // RMC - Patreon; Deleted by CorvaxGoob
         IoCManager.Register<TTSManager>(); // CorvaxGoob-TTS
     }

@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Server._Goobstation.Antag;
 using Content.Server.Administration.Managers;
 using Content.Server.Antag.Components;
 using Content.Server.Chat.Managers;
@@ -18,12 +17,9 @@ using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
 using Content.Server.Shuttles.Systems;
-using Content.Server.Shuttles.Components;
-using Content.Server.Shuttles.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Antag;
 using Content.Shared.Clothing;
-using Content.Shared.Clumsy;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
@@ -43,7 +39,6 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-using System.Linq;
 using Content.Server._CorvaxGoob.Skills;
 
 namespace Content.Server.Antag;
@@ -64,7 +59,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; // Goobstation
-    [Dependency] private readonly LastRolledAntagManager _lastRolled = default!; // Goobstation
+    //[Dependency] private readonly LastRolledAntagManager _lastRolled = default!; // Goobstation CorvaxGoob-Deleted
     [Dependency] private readonly PlayTimeTrackingManager _playTimeManager = default!;
     [Dependency] private readonly SkillsSystem _skills = default!; // CorvaxGoob-Skills
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
@@ -400,15 +395,15 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (!IsSessionValid(ent, session, def) || !IsEntityValid(session?.AttachedEntity, def))
             return false;
 
-        // Goobstation
-        if (session != null)
+        // Goobstation CorvaxGoob-Deleted
+        /*if (session != null)
         {
             try // tests die without this
             {
                 _lastRolled.SetLastRolled(session.UserId, _playTimeManager.GetOverallPlaytime(session));
             }
             catch { }
-        }
+        }*/
 
         if (onlyPreSelect && session != null)
         {
