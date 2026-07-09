@@ -23682,3 +23682,31 @@ Entries:
       message: fix random sentience localization error
   id: 2717
   time: '2026-07-08T19:35:44.0000000+00:00'
+- author: rivermyth
+  changes:
+    - type: Fix
+      message: Fixed most lathes not being able to be linked to the Silo.
+    - type: Tweak
+      message: Doubled Silo range
+  id: 2718
+  time: '2026-07-09T11:18:09.0000000+00:00'
+- author: elioskmil
+  changes:
+    - type: Fix
+      message: >-
+        fixed a bug that prevented players from using the RPD to build straight
+        and bent pipes on top of eachother even if they were rotated.
+  id: 2719
+  time: '2026-07-09T11:18:36.0000000+00:00'
+- author: Kenkaitos
+  changes:
+    - type: Fix
+      message: Fixed surgery
+  id: 2720
+  time: '2026-07-09T11:19:07.0000000+00:00'
+- author: Kenkaitos
+  changes:
+    - type: Fix
+      message: Fix IPC not having their charge updated
+  id: 2721
+  time: '2026-07-09T11:20:02.0000000+00:00'
