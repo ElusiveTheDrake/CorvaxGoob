@@ -28,7 +28,6 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
   - type: BatterySelfRecharger #CorvaxGoob-ShuttleGuns-Rebalance
-    autoRecharge: true
     autoRechargeRate: 1
   - type: SpaceArtillery
     powerChargeRate: 5 #CorvaxGoob-ShuttleGuns-Rebalance
@@ -93,7 +92,6 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
   - type: BatterySelfRecharger #CorvaxGoob-ShuttleGuns-Rebalance
-    autoRecharge: true
     autoRechargeRate: 0
   - type: SpaceArtillery
     powerChargeRate: 80 #CorvaxGoob-ShuttleGuns-Rebalance
@@ -164,7 +162,6 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
   - type: BatterySelfRecharger #CorvaxGoob-ShuttleGuns-Rebalance
-    autoRecharge: true
     autoRechargeRate: 100
   - type: SpaceArtillery
     powerChargeRate: 100 #CorvaxGoob-ShuttleGuns-Rebalance

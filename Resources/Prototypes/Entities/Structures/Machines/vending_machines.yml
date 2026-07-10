@@ -1093,7 +1093,6 @@
     pack: NanoMedPlusInventory
     offState: off
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/medical.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]

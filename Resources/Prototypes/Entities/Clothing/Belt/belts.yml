@@ -252,7 +252,6 @@
         - TrayScanner
         - GasAnalyzer
         - HandLabeler
-        - ShelterCapsule # CorvaxGoob
         - Fulton # CorvaxGoob
     # CorvaxGoob-WorkBelts-Techfab-end
 
