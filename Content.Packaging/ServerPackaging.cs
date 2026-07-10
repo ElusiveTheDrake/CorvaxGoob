@@ -10,6 +10,8 @@ namespace Content.Packaging;
 
 public static class ServerPackaging
 {
+    private static readonly bool UseSecrets = File.Exists(Path.Combine("Secrets", "CorvaxSecrets.sln")); // CorvaxGoob-Secret
+
     private static readonly List<PlatformReg> Platforms = new()
     {
         new PlatformReg("win-x64", "Windows", true),
@@ -37,19 +39,6 @@ public static class ServerPackaging
     .Select(o => o.Rid)
     .ToList();
 
-    private static readonly List<string> CoreServerContentAssemblies = new()
-    {
-        // CorvaxGoob-Secrets-Start
-        "Content.Corvax.Interfaces.Shared",
-        "Content.Corvax.Interfaces.Server",
-        // CorvaxGoob-Secrets-End
-        "Content.Server.Database",
-        "Content.Server",
-        "Content.Shared",
-        "Content.Shared.Database",
-        "Content.ModuleManager", // I cant be fucked to figure out how to this dynamically
-    };
-
     private static readonly List<string> ServerNotExtraAssemblies = new()
     {
         "JetBrains.Annotations",
@@ -73,7 +62,6 @@ public static class ServerPackaging
         "zh-Hant"
     };
 
-    private static readonly bool UseSecrets = File.Exists(Path.Combine("Secrets", "CorvaxSecrets.sln")); // CorvaxGoob-Secrets
     public static async Task PackageServer(bool skipBuild, bool hybridAcz, IPackageLogger logger, string configuration, List<string>? platforms = null)
     {
         if (platforms == null)
@@ -106,7 +94,7 @@ public static class ServerPackaging
 
         if (!skipBuild)
         {
-            await ProcessHelpers.RunCheck(new ProcessStartInfo
+            var startInfo = new ProcessStartInfo
             {
                 FileName = "dotnet",
                 ArgumentList =
@@ -121,17 +109,16 @@ public static class ServerPackaging
                     "/p:FullRelease=true",
                     "/m"
                 }
-            });
-
-            // CorvaxGoob-Secrets-Start
+            };
+            // CorvaxGoob-Secret-Start
             if (UseSecrets)
             {
                 logger.Info($"Secrets found. Building secret project for {platform}...");
                 await ProcessHelpers.RunCheck(new ProcessStartInfo
-                        {
-                        FileName = "dotnet",
-                        ArgumentList =
-                        {
+                {
+                    FileName = "dotnet",
+                    ArgumentList =
+                    {
                         "build",
                         Path.Combine("Secrets","Content.Corvax.Server", "Content.Corvax.Server.csproj"),
                         "-c", "Release",
@@ -141,10 +128,12 @@ public static class ServerPackaging
                         "/t:Rebuild",
                         "/p:FullRelease=true",
                         "/m"
-                        }
-                        });
+                    }
+                });
             }
-            // CorvaxGoob-Secrets-End
+            // CorvaxGoob-Secret-End
+
+            await ProcessHelpers.RunCheck(startInfo);
 
             await PublishClientServer(platform.Rid, platform.TargetOs, configuration);
         }
@@ -257,8 +246,16 @@ public static class ServerPackaging
 
         var depsContentExclusive = depsContent.Except(depsRobust).ToHashSet();
 
+        // CorvaxGoob-Secret-Start
         // Remove .dll suffix and apply filtering.
-        var names = depsContentExclusive.Select(p => p[..^4]).Where(p => !ServerNotExtraAssemblies.Any(p.StartsWith));
+        var names = depsContentExclusive.Select(p => p[..^4]).Where(p => !ServerNotExtraAssemblies.Any(p.StartsWith)).ToList();
+
+        if (UseSecrets)
+        {
+            names.Add("Content.Corvax.Shared");
+            names.Add("Content.Corvax.Server");
+        }
+        // CorvaxGoob-Secret-End
 
         return names;
 
