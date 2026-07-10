@@ -1112,7 +1112,9 @@ BorgModuleAdvancedChemical: BorgModuleAdvancedTopical
 
 #2026-07-10 CorvaxGoob
 PartRodMetalLingering0: null
-
-#2026-07-09 CorvaxGoob
 ClothingNeckCloakCe: ClothingNeckCloakWhiteCe
 ClothingNeckMantleCE: ClothingNeckMantleWhiteCE
+ClothingBeltAssaultFilled: null
+ClothingBackpackMessengerMailman: null
+SoapBorg: null
+ZookeeperIDCard: null
